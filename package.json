@@ -1,0 +1,21 @@
+{
+  "name": "sensor-recorder",
+  "version": "0.0.2",
+  "description": "A sensor recorder for Internet of Things",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "test.js"
+  },
+  "keywords": [
+    "iot",
+    "sensor"
+  ],
+  "author": "Nicolas Meseth",
+  "license": "ISC",
+  "dependencies": {
+    "array-query": "^0.1.2"
+  }
+}
