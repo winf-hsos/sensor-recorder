@@ -4,7 +4,7 @@ This node library can collect sensor data and return the (correct) average senso
 # Usage
 
 ```js
-var sensorRecorder = require('./index.js');
+var sensorRecorder = require('sensor-recorder');
 
 var r = sensorRecorder.createSensorRecorder("Test Sensor");
 
