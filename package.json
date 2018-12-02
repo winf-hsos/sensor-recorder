@@ -9,6 +9,10 @@
   "scripts": {
     "test": "test.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winf-hsos/sensor-recorder.git"
+  },
   "keywords": [
     "iot",
     "sensor"
