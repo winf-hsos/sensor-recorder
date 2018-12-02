@@ -1,6 +1,6 @@
 {
   "name": "sensor-recorder",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A sensor recorder for Internet of Things",
   "main": "index.js",
   "directories": {
