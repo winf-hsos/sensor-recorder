@@ -1,22 +1,26 @@
 var sensorRecorder = require('./index.js');
 
-var r = sensorRecorder.createSensorRecorder("Test Sensor");
+var r = sensorRecorder.createSensorRecorder();
 
 setTimeout(() => {
     var now = Date.now();
-    console.log(r.getAvgValueForTimeInterval(now - 10000, now));
-}, 7000)
+    console.log(r.getStatsForTimeInterval("s2", now - 10000, now));
+    r.clear();
+    console.dir(r.getAllValues());
+}, 10000)
 
-addInMs(r, 1.0, 100);
-addInMs(r, 1.0, 460);
-addInMs(r, 1.01, 4000);
-addInMs(r, -10.3, 450);
+addInMs("s1", r, 1.0, 10);
+addInMs("s1", r, 2.0, 3000);
+addInMs("s1", r, 1.5, 7500);
+
+addInMs("s2", r, 1.0, 460);
+addInMs("s2", r, 2.0, 8000);
 
 var start = Date.now();
 
-function addInMs(recorder, value, ms) {
-    setTimeout(() => { 
-        recorder.add(value);
-        console.log("Added >" + value + "< at time >" + (Date.now() - start) / 1000);
+function addInMs(sensorId, recorder, value, ms) {
+    setTimeout(() => {
+        recorder.add(sensorId, value);
+        console.log("Added >" + value + "< for sensor >" + sensorId + "< at time >" + (Date.now() - start) / 1000);
     }, ms)
 }
